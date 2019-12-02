@@ -1,0 +1,16 @@
+.cozy3d-calculator {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.sample-visualisation__image {
+  width: 100%;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 768px) {
+  .cozy3d-calculator {
+    flex-direction: row;
+  }
+}
