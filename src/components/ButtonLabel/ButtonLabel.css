@@ -1,0 +1,10 @@
+.button-label {
+  display: inline-block;
+  padding: var(--space-s) var(--space-l);
+  font-size: var(--main-font-size);
+  box-shadow: var(--shadowColor);
+  border-radius: var(--borderRadius);
+  color: var(--black-color);
+  font-weight: 500;
+  cursor: pointer;
+}

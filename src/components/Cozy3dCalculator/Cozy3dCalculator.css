@@ -1,16 +1,35 @@
-.cozy3d-calculator {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
+body {
+  margin: 0; /*for development*/
 }
 
-.sample-visualisation__image {
-  width: 100%;
-  object-fit: cover;
+.cozy3d-calculator {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif; /*for development*/
+  --main-font-size: 16px;
+  --label-font-size: 14px;
+  --header-font-size: calc(var(--main-font-size) * 1.5);
+  --cost-font-size: calc(var(--main-font-size) * 2);
+  --black-color: #404040;
+  --white-color: #fefefe;
+  --orange-color: #f47521;
+  --space-l: calc(var(--main-font-size) * 1.5);
+  --space-xl: calc(var(--main-font-size) * 3);
+  --space-m: var(--main-font-size);
+  --space-s: calc(var(--main-font-size) * 0.5); 
+  --stripped-space: calc(var(--space-xl) * -2);
+  --calc-width: 360px;
+
+  --sColor: 0, 0, 0;
+  --shadowColor: 3px 3px 15px 0px rgba(var(--sColor), 0.2);
+  --borderRadius: 4px;
 }
+
+
 
 @media screen and (min-width: 768px) {
   .cozy3d-calculator {
     flex-direction: row;
+    padding: var(--space-l);
   }
 }

@@ -1,7 +1,14 @@
+.sample-visualisation__image {
+  width: 100%;
+  object-fit: cover;
+}
+
 @media screen and (min-width: 768px) {
 
   .sample-visualisation {
-    flex: 1 0 70%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: calc(var(--stripped-space) + (var(--calc-width) * -1) + 100%);
   }
 
 }
