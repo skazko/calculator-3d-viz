@@ -2,9 +2,14 @@
   display: inline-block;
   padding: var(--space-s) var(--space-l);
   font-size: var(--main-font-size);
-  box-shadow: var(--shadowColor);
-  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-color);
+  border-radius: var(--border-radius);
   color: var(--black-color);
   font-weight: 500;
   cursor: pointer;
+  transition: box-shadow 0.15s;
+}
+
+.button-label:hover {
+  box-shadow: var(--label-shadow);
 }
