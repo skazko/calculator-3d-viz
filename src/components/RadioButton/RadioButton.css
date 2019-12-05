@@ -1,8 +1,0 @@
-.radio-button:focus + .button-label {
-  box-shadow: var(--label-shadow);
-}
-
-.radio-button:checked + .button-label {
-  color: var(--white-color);
-  background-color: var(--orange-color);
-}

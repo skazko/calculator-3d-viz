@@ -13,10 +13,12 @@ body {
   --cost-font-size: calc(var(--main-font-size) * 2);
   --border-radius: 4px;
   --calc-width: 360px;
+  --round-radio-size: calc((var(--main-font-size) * 2) + 3px);
 
   --black-color: #404040;
   --white-color: #fefefe;
   --orange-color: #f47521;
+  --pressed-orange: #c35207;
   --label-color: #999999;
 
   --space-l: calc(var(--main-font-size) * 1.5);

@@ -1,14 +1,7 @@
-import React, { useState } from 'react';
-import CalcSection from '../CalcSection';
-import RadioButton from '../RadioButton';
+import React from 'react';
+import RadioSection from '../RadioSection';
 
 const ChooseDetails = () => {
-
-  const [detalisation, setDetalisation] = useState('details');
-
-  const handleDetailsChange = (e) => {
-    setDetalisation(e.target.value);
-  };
 
   const details = [
     { title: 'Пусто', value: 'empty' },
@@ -17,23 +10,17 @@ const ChooseDetails = () => {
     { title: 'Много мелких предметов', value: 'extra' },
   ];
 
-  const buttons = details.map(detail => {
-    return (
-      <div className="calc-section__radio-button" key={detail.value}>
-        <RadioButton
-          checked={detalisation}
-          handleDetailsChange={handleDetailsChange} 
-          name="detalisation" 
-          title={detail.title} 
-          value={detail.value} />
-      </div>
-    )
-  });
-  
+  const legend = 'Выберите наполненность помещения деталями';
+  const name = 'detalisation';
+  const defaultValue = details[2].value;
+
   return (
-    <CalcSection legend="Выберите наполненность помещения деталями">
-      {buttons}
-    </CalcSection>
+    <RadioSection 
+      values={details}
+      legend={legend}
+      name={name}
+      defaultValue={defaultValue}
+       />
   );
 }
 
