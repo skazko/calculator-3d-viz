@@ -4,6 +4,7 @@ import ChooseDetails from '../ChooseDetails';
 import ChooseRendersNumber from '../ChooseRendersNumber';
 import ChooseQuality from '../ChooseQuality';
 import Choose3dModels from '../Choose3dModels';
+import ChooseUrgency from '../ChooseUrgency/ChooseUrgency';
 
 function Calculator() {
   return (
@@ -11,6 +12,7 @@ function Calculator() {
       <ChooseQuality />
       <ChooseDetails />
       <Choose3dModels />
+      <ChooseUrgency /> 
       <ChooseRendersNumber />
     </div>
   );
