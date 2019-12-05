@@ -20,8 +20,8 @@ const CheckBoxSection = ({legend, name, defaultChecked, value}) => {
           checked={checked}
           handleChange={handleChange} 
           name={name} 
-          title={value.title[checked]} 
-          value={value.value[checked]} />
+          title={value.title} 
+          value={value.value} />
       </div>
     </CalcSection>
   );

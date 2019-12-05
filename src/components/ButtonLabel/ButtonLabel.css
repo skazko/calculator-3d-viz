@@ -5,6 +5,7 @@
   box-shadow: var(--shadow-color);
   border-radius: var(--border-radius);
   color: var(--black-color);
+  background-color: var(--white-color);
   font-weight: 500;
   cursor: pointer;
   transition: box-shadow 0.15s;
@@ -33,15 +34,15 @@
   display: block;
   width: 20px;
   height: 20px;
-  border: 2px solid var(--orange-color);;
+  background-color: var(--white-color);
+  border: 2px solid var(--orange-color);
   border-radius: 4px;
   box-sizing: border-box;
   margin-right: var(--space-s);
 }
 
 input:checked + .button-label_checkbox::before {
-  background-color: #ffffff;
-  border-color: #ffffff;
+  background-color: var(--white-color);
   background-image: url('/check-mark.svg');
   background-size: 100%;
 }

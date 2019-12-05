@@ -4,8 +4,8 @@ import CheckBoxSection from '../CheckBoxSection';
 const ChooseQuality = () => {
 
   const quality = {
-    title: {"true": "Максимальная фотореалистичность", "false": "Средняя фотореалистичность"},
-    value: {"true": "maximum", "false": "middle"}
+    title: "Максимальная фотореалистичность",
+    value: "best"
   };
 
   const legend = 'Выберите настройки качества';
