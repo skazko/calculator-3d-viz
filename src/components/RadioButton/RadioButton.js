@@ -8,7 +8,7 @@ const RadioButton = ({name, value, title, handleChange, checked, round}) => {
   return (
     <Fragment>
       <input
-        checked={value === checked}
+        checked={checked.includes(value)}
         onChange={handleChange}
         className="radio-button visually-hidden"
         name={name} 

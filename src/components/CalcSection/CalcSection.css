@@ -14,3 +14,9 @@
   font-weight: 700;
   color: var(--label-color);
 }
+
+.calc-section__radio-button {
+  display: inline-block;
+  margin-right: var(--space-s);
+  margin-bottom: var(--space-s);
+}
