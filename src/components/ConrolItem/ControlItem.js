@@ -6,10 +6,28 @@ import Input from '../Input';
 const ControlItem = ({val, name, type, handleChange, checked, round}) => {
   const {value, title} = val
   switch (type) {
+
     case 'checkbox':
-      return <CheckBox name={name} value={value} title={title} handleChange={handleChange} checked={checked}/>
+      return (
+        <div className="calc-section__checkbox">
+          <CheckBox 
+            name={name} 
+            value={value} 
+            title={title} 
+            handleChange={handleChange} 
+            checked={checked}/>
+        </div>
+      );
+
     case 'text': 
-      return <Input name={value} title={title} value={checked} handleChange={handleChange}/>
+      return (
+        <Input 
+          name={value} 
+          title={title} 
+          value={checked} 
+          handleChange={handleChange}/>
+      );
+
     case 'radio':
         return (
           <div className="calc-section__radio-button">
@@ -22,10 +40,9 @@ const ControlItem = ({val, name, type, handleChange, checked, round}) => {
               checked={checked}/>
           </div>
         ); 
-        
-        
+
     default:
-      return;
+      throw new Error('Undefined control type, should use only: checkbox, radio, text');
   }
 }
 

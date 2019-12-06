@@ -3,10 +3,9 @@ import ControlItem from '../ConrolItem';
 import './CalcSection.css';
 
 const CalcSection = ({control}) => {
-  //TODO: handle multiple default
+
   const {legend, values, name, type, round=false} = control;
   const defVal = createDefaultValues(type, values);
-
   const [checked, setChecked] = useState(defVal);
 
   const handleChange = (e) => {
@@ -35,8 +34,16 @@ const CalcSection = ({control}) => {
   }; 
 
   const controlsView = values.map((val) => (
-    <ControlItem checked={checked} round={round} val={val} name={name} type={type} key={`${name}-${val.value}`} handleChange={handleChange}/>
-  ))
+    <ControlItem 
+      checked={checked} 
+      round={round} 
+      val={val} 
+      name={name} 
+      type={type} 
+      key={`${name}-${val.value}`} 
+      handleChange={handleChange}/>
+  ));
+  
   return (
     <fieldset className="calc-section">
       <legend className="calc-section__legend">
