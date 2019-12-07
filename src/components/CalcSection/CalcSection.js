@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import ControlItem from '../ConrolItem';
 import './CalcSection.css';
 
+//TODO: replace checked for picked
+
 const CalcSection = ({control}) => {
 
   const {legend, values, name, type, round=false} = control;
