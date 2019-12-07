@@ -26,7 +26,8 @@ const CalcSection = ({control}) => {
         setChecked(oldChecked => getNewInput({value, name}, oldChecked));
         break;
       default:
-        throw new Error (`${type} is not supported! Use only checkbox, radio and text inputs`);
+        throw new Error (`${type} is not supported! 
+        Use only checkbox, radio and text inputs`);
     }
   }; 
 
@@ -59,15 +60,17 @@ function createDefaultValues(type, values) {
 
 function getNewChecked(currentValue, checked) {
   const isCurrentValueChecked = checked.includes(currentValue);
-  const currentValueIndex = checked.findIndex(v => v === currentValue);
+  const idx = checked.findIndex(v => v === currentValue);
 
   return isCurrentValueChecked ? 
-    [...checked.slice(0, currentValueIndex), ...checked.slice(currentValueIndex + 1)] :
+    [...checked.slice(0, idx), ...checked.slice(idx + 1)] :
     [...checked, currentValue];
 } 
 
 function getNewInput({name, value}, picked) {
-  return picked.map(item => item.name === name ? {...item, value} : {...item})
+  return picked.map(item => item.name === name ? 
+    {...item, value} : 
+    {...item})
 }
 
 export default CalcSection;
