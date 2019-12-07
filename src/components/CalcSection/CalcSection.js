@@ -9,27 +9,22 @@ const CalcSection = ({control}) => {
   const [checked, setChecked] = useState(defVal);
 
   const handleChange = (e) => {
+    const type = e.target.type;
+    const value = e.target.value;
+    const name = e.target.name;
 
-    if (e.target.type === 'checkbox') {
-      let newChecked;
-      if (checked.includes(e.target.value)) {
-        const idx = checked.findIndex(v => v === e.target.value);
-        newChecked = [...checked.slice(0, idx), ...checked.splice(idx + 1)];
-      } else {
-        newChecked = [...checked, e.target.value];
-      }
-      setChecked(newChecked);
-    } 
-    
-    if (e.target.type === 'radio') {
-      setChecked([e.target.value]);
-    } 
-    
-    if (e.target.type === 'text') {
-      const newChecked = checked.map(item => {
-        return item.name === e.target.name ? {...item, value: e.target.value} : {...item};
-      });
-      setChecked(newChecked);
+    switch (type) {
+      case 'checkbox':
+        setChecked(oldChecked => getNewChecked(value, oldChecked));
+        break;
+      case 'radio':
+        setChecked([value]);
+        break;
+      case 'text':
+        setChecked(oldChecked => getNewInput({value, name}, oldChecked));
+        break;
+      default:
+        throw new Error (`${type} is not supported! Use only checkbox, radio and text inputs`);
     }
   }; 
 
@@ -58,6 +53,19 @@ function createDefaultValues(type, values) {
   return type === 'text' ? 
     values.map(v => ({ name: v.value, value: v.default })) :
     values.filter(v => v.default).map(v => v.value)
+}
+
+function getNewChecked(currentValue, checked) {
+  const isCurrentValueChecked = checked.includes(currentValue);
+  const currentValueIndex = checked.findIndex(v => v === currentValue);
+
+  return isCurrentValueChecked ? 
+    [...checked.slice(0, currentValueIndex), ...checked.slice(currentValueIndex + 1)] :
+    [...checked, currentValue];
+} 
+
+function getNewInput({name, value}, picked) {
+  return picked.map(item => item.name === name ? {...item, value} : {...item})
 }
 
 export default CalcSection;
