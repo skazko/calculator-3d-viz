@@ -3,7 +3,7 @@ import CheckBox from '../CheckBox';
 import RadioButton from '../RadioButton';
 import Input from '../Input';
 
-const ControlItem = ({val, name, type, handleChange, checked, round}) => {
+const ControlItem = ({val, name, type, round}) => {
   const {value, title} = val
   switch (type) {
 
@@ -13,19 +13,16 @@ const ControlItem = ({val, name, type, handleChange, checked, round}) => {
           <CheckBox 
             name={name} 
             value={value} 
-            title={title} 
-            handleChange={handleChange} 
-            checked={checked}/>
+            title={title} />
         </div>
       );
 
     case 'text': 
       return (
         <Input 
+          sectionName={name}
           name={value} 
-          title={title} 
-          value={checked} 
-          handleChange={handleChange}/>
+          title={title} />
       );
 
     case 'radio':
@@ -35,9 +32,7 @@ const ControlItem = ({val, name, type, handleChange, checked, round}) => {
               round={round} 
               name={name} 
               value={value} 
-              title={title} 
-              handleChange={handleChange} 
-              checked={checked}/>
+              title={title} />
           </div>
         ); 
 

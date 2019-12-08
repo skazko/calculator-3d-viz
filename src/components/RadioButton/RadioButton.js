@@ -1,21 +1,29 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
 import ButtonLabel from '../ButtonLabel';
-import './RadioButton.css';
+import {CalcDispatch, CalcState} from '../context';
 
-const RadioButton = ({name, value, title, handleChange, checked, round}) => {
+const RadioButton = ({name, value, title, round}) => {
   const id = `${name}-${value}`;
+  const dispatch = useContext(CalcDispatch);
+  const pickedValue = useContext(CalcState)[name];
+
+  function handleChange(e) {
+    dispatch({ type: 'radio', payload: {name, value: e.target.value} });
+  }
+
+  const isChecked = value === pickedValue;
 
   return (
     <Fragment>
       <input
-        checked={checked.includes(value)}
+        checked={isChecked}
         onChange={handleChange}
-        className="radio-button visually-hidden"
+        className="button-input visually-hidden"
         name={name} 
         value={value} 
         id={id} 
         type="radio" />
-      <ButtonLabel title={title} id={id} round={round} />
+      <ButtonLabel checked={isChecked} title={title} id={id} round={round} />
     </Fragment>
   )
 }

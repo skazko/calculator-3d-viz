@@ -41,7 +41,7 @@
   margin-right: var(--space-s);
 }
 
-input:checked + .button-label_checkbox::before {
+.button-label_checkbox-checked::before {
   background-color: var(--white-color);
   background-image: url('/check-mark.svg');
   background-size: 100%;
@@ -51,16 +51,16 @@ input:checked + .button-label_checkbox::before {
   box-shadow: var(--label-shadow);
 }
 
-input:focus + .button-label {
+.button-input:focus + .button-label {
   box-shadow: var(--label-shadow);
 }
 
-input:active + .button-label {
+.button-input:active + .button-label {
   color: var(--white-color);
   background-color: var(--pressed-orange);
 }
 
-input:checked + .button-label {
+.button-label_checked {
   color: var(--white-color);
   background-color: var(--orange-color);
 }

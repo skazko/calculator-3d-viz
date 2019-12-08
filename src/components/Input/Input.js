@@ -1,8 +1,25 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './Input.css';
+import {CalcDispatch, CalcState} from '../context';
 
-const Input = ({title, name, value, handleChange}) => {
-  const currentValue = value.find(v => v.name === name).value;
+const Input = ({title, name, sectionName}) => {
+  
+  const dispatch = useContext(CalcDispatch);
+  const pickedValue = useContext(CalcState)[sectionName][name];
+
+  function handleChange(e) {
+    dispatch({
+      type: 'text',
+      payload: {
+        name: sectionName,
+        value: {
+          name,
+          value: e.target.value
+        }
+      }
+    })
+  }
+
   return (
     <label className="input">
       <span className="input__title">{title}</span>
@@ -11,7 +28,7 @@ const Input = ({title, name, value, handleChange}) => {
         className="input__value" 
         type="text" 
         name={name} 
-        value={currentValue}
+        value={pickedValue}
         size="4"
         maxLength="4">
       </input>

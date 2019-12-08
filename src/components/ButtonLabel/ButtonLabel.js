@@ -1,12 +1,14 @@
 import React from 'react';
+import { getControlClass } from '../../classNames';
 import './ButtonLabel.css';
 
-const ButtonLabel = ({title, id, round=false, checkbox=false}) => {
-  const clsRound = round ? " button-label_round" : "";
-  const clsCheckbox = checkbox ? " button-label_checkbox" : ""; 
-  const clsName = "button-label" + clsRound + clsCheckbox;
+const ButtonLabel = ({title, id, round=false, checkbox=false, checked}) => {
+  // TODO: review classname 
+  
+  const cls = getControlClass({round, checkbox, checked});
+
   return (
-    <label htmlFor={id} className={clsName}>
+    <label htmlFor={id} className={cls}>
       {title}
     </label>
   );
