@@ -1,6 +1,7 @@
 import React from 'react';
 import ControlItem from '../ConrolItem';
 import './CalcSection.css';
+import { addFlags } from "../../classNames";
 
 //TODO: replace checked for picked
 
@@ -10,7 +11,7 @@ const CalcSection = ({control}) => {
 
   const controlsView = values.map((val) => (
     <ControlItem 
-      round={round} 
+      mask={addFlags(1, {round})} 
       val={val} 
       name={name} 
       type={type} 

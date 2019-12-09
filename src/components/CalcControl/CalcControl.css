@@ -1,4 +1,4 @@
-.button-label {
+.calc-control__label {
   display: inline-block;
   padding: var(--space-s) var(--space-s);
   font-size: var(--main-font-size);
@@ -12,7 +12,7 @@
   transition: background-color 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.button-label_round {
+.calc-control__label_round {
   padding: 0;
   width: var(--round-radio-size);
   height: var(--round-radio-size);
@@ -23,13 +23,13 @@
   transition: box-shadow none;
 }
 
-.button-label_checkbox {
+.calc-control__label_checkbox {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.button-label_checkbox::before {
+.calc-control__label_checkbox::before {
   content: '';
   display: block;
   width: 20px;
@@ -41,26 +41,27 @@
   margin-right: var(--space-s);
 }
 
-.button-label_checkbox-checked::before {
+/* For checkboxes */
+.calc-control__label_checked::before {
   background-color: var(--white-color);
   background-image: url('/check-mark.svg');
   background-size: 100%;
 }
 
-.button-label:hover {
+.calc-control__label:hover {
   box-shadow: var(--label-shadow);
 }
 
-.button-input:focus + .button-label {
+.calc-control__input:focus + .calc-control__label {
   box-shadow: var(--label-shadow);
 }
 
-.button-input:active + .button-label {
+.calc-control__input:active + .calc-control__label {
   color: var(--white-color);
   background-color: var(--pressed-orange);
 }
 
-.button-label_checked {
+.calc-control__label_checked {
   color: var(--white-color);
   background-color: var(--orange-color);
 }

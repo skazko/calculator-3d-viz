@@ -14,7 +14,7 @@ function Cozy3dCalculator() {
   return (
     <main className="cozy3d-calculator">
       <CalcState.Provider value={state}>
-        <SampleVisualisation />
+        <SampleVisualisation state={state} />
         <CalcDispatch.Provider value={dispatch}>
           <Calculator state={state}/>
         </CalcDispatch.Provider>

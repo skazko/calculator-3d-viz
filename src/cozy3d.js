@@ -157,17 +157,24 @@ export function calculate(state) {
     default: 
       break;
   }
-  if (state[THREE_D_MODELS][0] === NEED_MODELS) k = k * 1.5;
-  if (state[URGENCY][0] === HOT) k = k * 2;
+  if (state[THREE_D_MODELS][0] === NEED_MODELS) {
+    k = k * 1.5;
+  }
+  if (state[URGENCY][0] === HOT) {
+    k = k * 2;
+  }
 
   const baseRate = 300;
   const rate = k * baseRate;
   const addPerView = 500;
 
   const rooms = parseInt(state[PREMISE][ROOMS_NUMBER]);
-  const square = Math.max(rooms * 10, parseFloat(state[PREMISE][SQUARE]));
+  let square = parseFloat(state[PREMISE][SQUARE])
+  square = Math.max(rooms * 10, square);
   const imagePerRoom = parseInt(state[RENDERS_NUMBER]);
-  const addCost = imagePerRoom > 3 ? rooms * (imagePerRoom - 3) * addPerView : 0;
+  const addCost = imagePerRoom > 3 ? 
+    rooms * (imagePerRoom - 3) * addPerView : 
+    0;
+    
   return Math.ceil(square * rate) + addCost;
-
 }

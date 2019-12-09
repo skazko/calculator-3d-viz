@@ -2,6 +2,9 @@ export const CHECKBOX = 'checkbox';
 export const RADIO = 'radio';
 export const TEXT = 'text';
 
+export const CHECKED = 'checked';
+export const ROUND = 'round';
+
 export const RENDERS_QUALITY = 'renders-quality';
 export const BEST = 'best';
 export const THREE_D_MODELS = '3d-models';

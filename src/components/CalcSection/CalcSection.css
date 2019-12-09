@@ -15,7 +15,7 @@
   color: var(--label-color);
 }
 
-.calc-section__radio-button {
+.calc-section__radio {
   display: inline-block;
   margin-right: var(--space-s);
   margin-bottom: var(--space-s);
