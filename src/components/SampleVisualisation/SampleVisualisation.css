@@ -4,11 +4,10 @@
 }
 
 @media screen and (min-width: 768px) {
-
   .sample-visualisation {
+    display: flex;
+    align-items: flex-start;
     flex-grow: 1;
     flex-shrink: 1;
-    flex-basis: calc(var(--stripped-space) + (var(--calc-width) * -1) + 100%);
   }
-
 }

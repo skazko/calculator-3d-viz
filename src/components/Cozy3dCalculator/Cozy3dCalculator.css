@@ -1,7 +1,3 @@
-body {
-  margin: 0; /*for development*/
-}
-
 .cozy3d-calculator {
   display: flex;
   flex-direction: column;
@@ -24,21 +20,19 @@ body {
   --space-l: calc(var(--main-font-size) * 1.5);
   --space-xl: calc(var(--main-font-size) * 3);
   --space-m: var(--main-font-size);
-  --space-s: calc(var(--main-font-size) * 0.5); 
+  --space-s: calc(var(--main-font-size) * 0.5);
   --stripped-space: calc(var(--space-xl) * -2);
 
   --s-color: 0, 0, 0;
   --shadow-color: 1px 1px 5px 2px rgba(var(--s-color), 0.2);
-  
+
   --label-s-color: 244, 117, 33;
-  --label-shadow: 0 0 0 3px rgba(var(--label-s-color), 0.5)
+  --label-shadow: 0 0 0 3px rgba(var(--label-s-color), 0.5);
 }
 
-
-
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1025px) {
   .cozy3d-calculator {
     flex-direction: row;
-    padding: var(--space-l);
+    /* padding: var(--space-l); */
   }
 }

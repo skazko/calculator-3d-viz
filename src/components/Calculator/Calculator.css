@@ -1,19 +1,20 @@
 @media screen and (min-width: 768px) {
-
   .calculator {
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: var(--calc-width);
-    margin-left: var(--space-xl);
+    /* margin-left: var(--space-xl); */
     /* min-width: 360px; */
   }
-
 }
 
 .calculator__header {
+  background-color: #ffe8d9;
+  border-left: 10px solid #f47521;
+  padding: 10px;
   margin: 0;
-  padding: 0;
   margin-bottom: var(--space-l);
+  font-size: 1.5rem;
 }
 
 .calculator__total {
