@@ -35,7 +35,6 @@ export function addFlags(mask, flags){
       mask = mask | map[key];
     }
   }
-  console.log(mask)
   return mask;
 }
 

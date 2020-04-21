@@ -1,8 +1,8 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import Input from '../Input';
 import CalcControl from '../CalcControl';
 import { addFlags } from "../../classNames";
-import {CalcDispatch, CalcState} from '../context';
+import { CalcState } from '../context';
 
 const ControlItem = ({val, name, type, mask}) => {
   const {value, title} = val;

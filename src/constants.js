@@ -21,3 +21,4 @@ export const SQUARE = 'square';
 export const ROOMS_NUMBER = 'rooms-number';
 export const RENDERS_NUMBER = 'renders-number';
 
+export const SAMPLE_MODS = [BEST, EMPTY, FURNITURE, DETAILS, EXTRA];
