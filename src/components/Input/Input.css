@@ -10,6 +10,7 @@
   font-weight: 500;
   overflow: hidden;
   margin-bottom: var(--space-s);
+  margin-right: var(--space-s);
 }
 
 .input__title {
@@ -31,7 +32,6 @@
   font-family: 'Roboto', sans-serif;
   font-size: var(--main-font-size);
   font-weight: 500;
-  
 }
 
 .input__value:focus {

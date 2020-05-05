@@ -24,9 +24,21 @@ function Cozy3dCalculator() {
 }
 
 function getSampleState(state) {
-  const det = state[DETALISATION];
-  const qua = state[RENDERS_QUALITY][0];
-  return qua ? `${det}-${qua}` : det;
+  const baseName = state[DETALISATION];
+  const qualityState = state[RENDERS_QUALITY][0];
+  const postproductionState = state['postproduction'][0];
+
+  let imageName = baseName;
+
+  if (qualityState) {
+    imageName += `-${qualityState}`;
+  }
+
+  if (postproductionState) {
+    imageName += `-${postproductionState}`;
+  }
+
+  return imageName;
 }
 
 export default Cozy3dCalculator;
