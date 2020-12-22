@@ -11,6 +11,7 @@ function Calculator({state}) {
       <h3 className="calculator__header">Расчет стоимости 3D визуализации</h3>
       {ctrls}
       <div className="calculator__total">Итого: {total}</div>
+      <span className="calculator__note">Стоимость является ориентировочной.</span>
     </div>
   );
 }

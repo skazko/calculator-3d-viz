@@ -25,3 +25,8 @@
   font-weight: 700;
   padding-top: var(--space-l);
 }
+
+.calculator__note {
+  color: var(--label-color);
+  font-size: 0.875rem;
+}
