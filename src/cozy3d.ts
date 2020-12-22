@@ -200,10 +200,10 @@ export function calculate(state: IState) {
   );
 
   // Calc rate
-  const baseRate = 250;
+  const baseRate = 100;
 
   const detalisationRate = {
-    [FURNITURE]: 100,
+    [FURNITURE]: 150,
     [DETAILS]: 200,
     [EXTRA]: 250,
   };
@@ -211,7 +211,7 @@ export function calculate(state: IState) {
   const photorealisticRate = state[RENDERS_QUALITY][0] === BEST ? 50 : 0;
 
   const chooseModelsRate =
-    state[THREE_D_MODELS][0] === NEED_MODELS ? baseRate * 0.2 : 0;
+    state[THREE_D_MODELS][0] === NEED_MODELS ? 50 : 0;
 
   const rate =
     baseRate +
@@ -224,7 +224,7 @@ export function calculate(state: IState) {
   // Calc postproductin job
 
   const postproductionRate =
-    state['postproduction'][0] === 'photoshop' ? 300 : 0;
+    state['postproduction'][0] === 'photoshop' ? 50 : 0;
 
   const postproductionVolume =
     state[PREMISE][ROOMS_NUMBER] * state[RENDERS_NUMBER];
@@ -233,7 +233,7 @@ export function calculate(state: IState) {
 
   // Calc additional views
 
-  const addViewsRate = 800;
+  const addViewsRate = 500;
 
   const addViewsVolume =
     state[PREMISE][ROOMS_NUMBER] * (state[RENDERS_NUMBER] - 3);
@@ -246,5 +246,5 @@ export function calculate(state: IState) {
 
   const jobCost = (mainJob + postproductionJob + addViewsJob) * urgencyRate;
 
-  return jobCost;
+  return Math.max(jobCost, 3000);
 }
